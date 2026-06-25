@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    background-color: ghostwhite;
+}
+
+.questionsBox {
+    border: 2px solid black;
+    padding: 50px 150px;
+}
+
+#category-One, #category-Two {
+    padding: 20px;
+}
+
+#restart {
+    padding: 5px;
+}
