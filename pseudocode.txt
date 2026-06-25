@@ -1,0 +1,28 @@
+Game: Quiz
+
+Variables: 
+1. Correct answers 
+2. Wrong answers
+3. User choice
+4. Score
+5. Win/Lose
+6. Category
+
+Data Structures:
+Arrays for the correct answers, wrong answers, and maybe the questions.
+
+
+Functions:
+1. Check score to see if user won/lost.
+2. Check the answers to see if user chose the correct answer or not.
+3. Check which category user chose.
+3. Reset button.
+
+User Stories:
+As a user I want to answer the questions by choosing one of the options.
+As a user I want to have the option to select which category I want.
+As a user I want to get one score higher for every correct answer.
+As a user I want my score to remain as it is if I choose the wrong answer.
+As a user I want to see if I won or lost by seeing my score. 
+
+
