@@ -1,7 +1,7 @@
 //constants
 // const categoryArr = ['Information Systems', 'Software Engineering']
 const questionsArr = { "CSS": [
-    {q:"sys question 1", a: ["one", "Two", "three"], right: 1}, //i'll add the questions and answers later
+    {q:"What is the CSS universal Selector?", a: ["*", "Body", "#"], right: 0}, //i'll add the questions and answers later
     {q:"sys question 2", a: ["one", "Two", "three"], right: 1},
     {q:"sys question 3", a: ["one", "Two", "three"], right: 1},
     {q:"sys question 4", a: ["one", "Two", "three"], right: 1},
@@ -17,7 +17,7 @@ const questionsArr = { "CSS": [
 }
 
 //variables
-let userChoice
+// let userChoice
 let score = 0
 let userCategory = ''
 let questionNumber = 0
@@ -33,13 +33,32 @@ const restart = document.querySelector('#restart')
 const answersBox = document.querySelector('.answersBox')
 const answersBtn = document.querySelectorAll('.answersBox button')
 const results = document.querySelector('#results')
+const startQuizBtn = document.querySelector('#start-quiz')
+const quizstartEl = document.querySelector('.quiz-start')
 
 //event listeners
 
-questionNumScreen.textContent = ''
-questionText.textContent = 'Select a Category'
-
+questionNumScreen.style.display = 'none' 
 answersBox.style.display = 'none'
+categoriesBox.style.display = 'none'
+results.style.display = 'none'
+questionText.style.display = 'none'
+restart.style.display = 'none'
+// questionText.textContent = 'Select a Category'
+
+startQuizBtn.addEventListener('click', function() {
+    startQuizBtn.style.display = 'none'
+    quizstartEl.textContent = ''
+    questionNumScreen.style.display = 'block' 
+    categoriesBox.style.display = 'block'
+    results.style.display = 'block'
+    questionText.style.display = 'block'
+    restart.style.display = 'block'
+    answersBox.style.display = 'none'
+
+    questionNumScreen.textContent = ''
+    questionText.textContent = 'Select a Category'
+})
 
 categoriesBox.addEventListener('click', function(categorySelected) {
     //this stores users choice 
@@ -67,10 +86,11 @@ restart.addEventListener('click', function() {
     userCategory = ''
     questionNumber = 0
     questionNumScreen.textContent = ''
-    questionText.textContent = 'Select a Category'
+    questionText.textContent = 'Select a Category:'
+
     categoriesBox.style.display = 'block'
     answersBox.style.display = 'none'
-    results.textContent = 'Your Score is:  / 5'
+    // results.textContent = 'Your Score is:  / 5'
 })
 
 //functions
@@ -113,8 +133,7 @@ function checkAnswers(checkUserAnswer) {
     //check if the user selected thr right answer
     if(checkUserAnswer === rightAnswer) {
         score++
-        console.log(score)
-        results.textContent = `Your Score is: ${score} / 5`
+        results.textContent = `Your Score is : ${score}  / 5`
     }
     //go to the next question
     questionNumber++

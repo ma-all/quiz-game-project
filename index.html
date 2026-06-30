@@ -8,24 +8,32 @@
     <script defer src="app.js"></script>
 </head>
 <body>
-    <h1>Quiz</h1>
-    <section class="questionsBox">
-            <h3 id="question-number">Question Number: </h3>
-            <h3 id="question-text">Questions go here</h3>
-    </section>
-    <br>
-    <section class="categoriesBox">
-        <button id="category-One">CSS</button>
-        <button id="category-Two">Javascript</button>
-    </section>
-    <br>
-    <section class="answersBox">
-        <button id="answer-One">One</button>
-        <button id="answer-Two">Two</button>
-        <button id="answer-Three">Three</button>
-    </section>
-    <br>
-    <h3 id="results">Your Score is:   / 5</h3>
-    <button id="restart">Restart Game</button>
+    <div>
+        <!-- <h1>Quiz</h1> -->
+        <section class="quiz-start">
+            <h3>Start Quiz?</h3>
+            <button id="start-quiz">Yes!</button>
+        </section>
+
+        <section class="questionsBox">
+                <h3 id="question-number">Question Number: </h3>
+                <h3 id="question-text">Questions go here</h3>
+        </section>
+
+        <section class="categoriesBox">
+            <button id="category-One">CSS</button>
+            <button id="category-Two">Javascript</button>
+        </section>
+
+        <section class="answersBox" >
+            <button id="answer-One">One</button>
+            <button id="answer-Two">Two</button>
+            <button id="answer-Three">Three</button>
+        </section>
+
+        <h3 id="results"></h3>
+        <button id="restart">Restart Game</button>
+    </div>
+    
 </body>
 </html>
