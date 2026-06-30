@@ -12,8 +12,13 @@ body {
     padding: 30px 120px;
 }
 
-#category-One, #category-Two {
+.categoriesBox {
     padding: 20px;
+    /* display: none; */
+}
+
+.answersBox {
+    padding: 40px;
 }
 
 #restart {
