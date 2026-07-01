@@ -33,14 +33,12 @@ const startQuizBtn = document.querySelector('#start-quiz')
 const quizText = document.querySelector('#quiz-text')
 
 //event listeners
-
 questionNumScreen.style.display = 'none' 
 answersBox.style.display = 'none'
 categoriesBox.style.display = 'none'
 results.style.display = 'none'
 questionText.style.display = 'none'
 restart.style.display = 'none'
-// questionText.textContent = 'Select a Category'
 
 startQuizBtn.addEventListener('click', function() {
     //hide ths start part and show the categories
@@ -146,7 +144,7 @@ function endQuiz() {
     questionNumScreen.textContent = ''
     answersBox.style.display = 'none'
     //show the score and play the sound
-    questionText.textContent = 'The Quiz is Done!'
+    questionText.textContent = 'Quiz is Done!'
     results.textContent = `Your Score is ${score} / 5`
     const sound = new Audio('./audio/sound.mp3')
     sound.play()
