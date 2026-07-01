@@ -80,12 +80,14 @@ restart.addEventListener('click', function() {
     score = 0
     userCategory = ''
     questionNumber = 0
+    //remove the questions number, text, results,
     questionNumScreen.textContent = ''
     questionText.textContent = ''
     results.textContent = ''
     answersBox.style.display = 'none'
     categoriesBox.style.display = 'none'
     restart.style.display = 'none'
+    //show start quiz 
     quizText.textContent = 'Start Quiz?'
     startQuizBtn.style.display = 'inline-block'
 })

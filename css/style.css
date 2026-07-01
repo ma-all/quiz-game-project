@@ -35,11 +35,6 @@ div {
     font-size: 25px;
 }
 
-#start-quiz {
-    justify-content: center;
-    align-items: center;
-}
-
 button {
     background: #e9ecef;
     padding: 6px 12px;
