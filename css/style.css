@@ -65,4 +65,11 @@ audio {
     display: block;
     padding: 5px 15px;
     margin: 20px auto 0 auto;
+    background-color: #92989e;
+    border: 1px solid #6c757d;
+    color: white;
+}
+
+#restart:hover {
+    background-color: #6c757d;
 }

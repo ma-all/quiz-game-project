@@ -1,13 +1,13 @@
 //constants
 const questionsArr = { "CSS": [
-    {q:"What is the CSS universal Selector?", a: ["*", "Body", "#"], right: 0}, 
+    {q:"What is CSS universal Selector?", a: ["*", "Body", "#"], right: 0}, 
     {q:"Styling sheets can be inserted in --- ways?", a: ["2", "3", "5"], right: 1},
     {q:"How do you write comments in CSS?", a: ["//", "<!---->", " /* */"], right: 2},
     {q:"Colors can be specified by using?", a: ["RGB", "HEX", "Both"], right: 2},
     {q:"Content can be placed vertically using display-flex: -----? ", a: ["column", "row", "column-reverse"], right: 0},
 ],
     "Javascript": [
-    {q:"How can you acess an HTML element?", a: ["console.log()", "document.getElementbyId()", "None"], right: 1},
+    {q:"Which returns the first matching element?", a: ["console.log()", "document.querySelector()", "None"], right: 1},
     {q:"Javascript variables can be declared using?", a: ["let", "const", "Both"], right: 2},
     {q:"Consts can be reassigned?", a: ["Yes", "No", "Depends"], right: 1},
     {q:"Functions parameters and arguments are?", a: ["Distinct", "Similar", "Undefined"], right: 0},
@@ -76,6 +76,7 @@ answersBox.addEventListener('click', function(answer) {
 })
 
 restart.addEventListener('click', function() {
+    //reset the scores, user category and go back to the first question
     score = 0
     userCategory = ''
     questionNumber = 0
@@ -86,7 +87,7 @@ restart.addEventListener('click', function() {
     categoriesBox.style.display = 'none'
     restart.style.display = 'none'
     quizText.textContent = 'Start Quiz?'
-    startQuizBtn.style.display = 'block'
+    startQuizBtn.style.display = 'inline-block'
 })
 
 //functions
@@ -129,9 +130,9 @@ function checkAnswers(checkUserAnswer) {
     //check if the user selected thr right answer
     if(checkUserAnswer === rightAnswer) {
         score++
-        results.textContent = `Your Score is : ${score}  / 5`
+        results.textContent = `Your Score is : ${score} / 5`
     } else {
-        results.textContent = `Your Score is : ${score}  / 5`
+        results.textContent = `Your Score is : ${score} / 5`
     }
     //go to the next question
     questionNumber++
@@ -144,7 +145,7 @@ function endQuiz() {
     answersBox.style.display = 'none'
     //show the score and play the sound
     questionText.textContent = 'The Quiz is Done!'
-    results.textContent = `Your Total Score is ${score} / 5`
+    results.textContent = `Your Score is ${score} / 5`
     const sound = new Audio('./audio/sound.mp3')
     sound.play()
 }
