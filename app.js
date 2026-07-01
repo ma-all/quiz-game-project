@@ -1,23 +1,21 @@
 //constants
-// const categoryArr = ['Information Systems', 'Software Engineering']
 const questionsArr = { "CSS": [
-    {q:"What is the CSS universal Selector?", a: ["*", "Body", "#"], right: 0}, //i'll add the questions and answers later
-    {q:"sys question 2", a: ["one", "Two", "three"], right: 1},
-    {q:"sys question 3", a: ["one", "Two", "three"], right: 1},
-    {q:"sys question 4", a: ["one", "Two", "three"], right: 1},
-    {q:"sys question 5", a: ["one", "Two", "three"], right: 1},
+    {q:"What is the CSS universal Selector?", a: ["*", "Body", "#"], right: 0}, 
+    {q:"Styling sheets can be inserted in --- ways?", a: ["2", "3", "5"], right: 1},
+    {q:"How do you write comments in CSS?", a: ["//", "<!---->", " /* */"], right: 2},
+    {q:"Colors can be specified by using?", a: ["RGB", "HEX", "Both"], right: 2},
+    {q:"Content can be placed vertically using display-flex: -----? ", a: ["column", "row", "column-reverse"], right: 0},
 ],
     "Javascript": [
-    {q:"question 1", a: ["one", "two", "three"], right: 1},
-    {q:"question 2", a: ["one", "two", "three"], right: 1},
-    {q:"question 3", a: ["one", "two", "three"], right: 1},
-    {q:"question 4", a: ["one", "two", "three"], right: 1},
-    {q:"question 5", a: ["one", "two", "three"], right: 1},
+    {q:"How can you acess an HTML element?", a: ["console.log()", "document.getElementbyId()", "None"], right: 1},
+    {q:"Javascript variables can be declared using?", a: ["let", "const", "Both"], right: 2},
+    {q:"Consts can be reassigned?", a: ["Yes", "No", "Depends"], right: 1},
+    {q:"Functions parameters and arguments are?", a: ["Distinct", "Similar", "Undefined"], right: 0},
+    {q:"How can you extract a part of a string and return the extracted string?", a: ["string.split()", "string.replace()", "string.slice()"], right: 2},
 ]
 }
 
 //variables
-// let userChoice
 let score = 0
 let userCategory = ''
 let questionNumber = 0
@@ -26,15 +24,13 @@ let questionNumber = 0
 const questionText = document.querySelector('#question-text')
 const questionsBox = document.querySelectorAll('#questionsBox') 
 const questionNumScreen = document.querySelector('#question-number')
-// const categoryOne = document.querySelector('#category-One')
-// const categoryTwo = document.querySelector('#category-Two')
 const categoriesBox = document.querySelector('.categoriesBox')
 const restart = document.querySelector('#restart')
 const answersBox = document.querySelector('.answersBox')
 const answersBtn = document.querySelectorAll('.answersBox button')
 const results = document.querySelector('#results')
 const startQuizBtn = document.querySelector('#start-quiz')
-const quizstartEl = document.querySelector('.quiz-start')
+const quizText = document.querySelector('#quiz-text')
 
 //event listeners
 
@@ -47,22 +43,20 @@ restart.style.display = 'none'
 // questionText.textContent = 'Select a Category'
 
 startQuizBtn.addEventListener('click', function() {
+    //hide ths start part and show the categories
     startQuizBtn.style.display = 'none'
-    quizstartEl.textContent = ''
+    quizText.textContent = ''
     questionNumScreen.style.display = 'block' 
     categoriesBox.style.display = 'block'
     results.style.display = 'block'
     questionText.style.display = 'block'
     restart.style.display = 'block'
     answersBox.style.display = 'none'
-
     questionNumScreen.textContent = ''
-    questionText.textContent = 'Select a Category'
+    questionText.textContent = 'Select a Category:'
 })
 
 categoriesBox.addEventListener('click', function(categorySelected) {
-    //this stores users choice 
-    // userChoice = categorySelected.target.id
     //check whichh category the user selected
     if(categorySelected.target.id === 'category-One') {
         userCategory = "CSS"
@@ -86,11 +80,13 @@ restart.addEventListener('click', function() {
     userCategory = ''
     questionNumber = 0
     questionNumScreen.textContent = ''
-    questionText.textContent = 'Select a Category:'
-
-    categoriesBox.style.display = 'block'
+    questionText.textContent = ''
+    results.textContent = ''
     answersBox.style.display = 'none'
-    // results.textContent = 'Your Score is:  / 5'
+    categoriesBox.style.display = 'none'
+    restart.style.display = 'none'
+    quizText.textContent = 'Start Quiz?'
+    startQuizBtn.style.display = 'block'
 })
 
 //functions
@@ -134,6 +130,8 @@ function checkAnswers(checkUserAnswer) {
     if(checkUserAnswer === rightAnswer) {
         score++
         results.textContent = `Your Score is : ${score}  / 5`
+    } else {
+        results.textContent = `Your Score is : ${score}  / 5`
     }
     //go to the next question
     questionNumber++
@@ -141,8 +139,12 @@ function checkAnswers(checkUserAnswer) {
 }
 
 function endQuiz() {
+    //remove the questions and answers
     questionNumScreen.textContent = ''
     answersBox.style.display = 'none'
+    //show the score and play the sound
     questionText.textContent = 'The Quiz is Done!'
     results.textContent = `Your Total Score is ${score} / 5`
+    const sound = new Audio('./audio/sound.mp3')
+    sound.play()
 }
