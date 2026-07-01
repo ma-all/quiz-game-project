@@ -11,15 +11,14 @@ body {
     background-position: center;  
     margin: 0px;
     font-family: "Chicle", serif;
-    color: #495057;
     letter-spacing: 2px;
 }
 
 div {
-    background-color: #e9ecef;
-    border: 2px solid #6c757d;
+    background-color: #f3d9fd;
+    border: 2px solid #3f0058;
     border-radius: 0px;
-    box-shadow: 4px 4px 0 #6c757d, 8px 8px 0 #6c757d, 12px 12px 0 #6c757d;
+    box-shadow: 4px 4px 0 #3f0058, 8px 8px 0 #3f0058, 12px 12px 0 #3f0058;
     padding: 40px;
     width: 500px;
     height: 400px;
@@ -40,31 +39,31 @@ div {
 }
 
 button {
-    background: #e9ecef;
+    background: #f3d9fd;
     padding: 6px 12px;
-    border: 1px solid #6c757d;
+    border: 1px solid #3f0058;
     border-radius: 0px;
-    box-shadow: 2px 2px 0 #6c757d, 4px 4px 0 #6c757d;
+    box-shadow: 2px 2px 0 #3f0058, 4px 4px 0 #3f0058;
     font-size: 20px;
     margin: 5px;
     cursor: pointer;
     font-family: "Chicle", serif;
-    color: #6c757d;
+    
 }
 
 button:hover {
-    background-color: #ced4da;
+    background-color: #d9a6ee;
 }
 
 #restart {
     display: block;
     padding: 5px 15px;
     margin: 20px auto 0 auto;
-    background-color: #92989e;
-    border: 1px solid #6c757d;
+    background-color: #bb80d2;
+    border: 1px solid #3f0058;
     color: white;
 }
 
 #restart:hover {
-    background-color: #6c757d;
+    background-color: #3f0058;
 }
