@@ -108,7 +108,6 @@ function showQuestion() {
     if(questionNumber >= currentCatQuestion.length){
         return endQuiz()
     }
-    //
     const currentQuestion = currentCatQuestion[questionNumber]
     //increase the number by one for every next questions
     questionNumScreen.textContent = `Question ${questionNumber+1}:`
