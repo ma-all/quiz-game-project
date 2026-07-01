@@ -69,6 +69,7 @@ categoriesBox.addEventListener('click', function(categorySelected) {
 })
 
 answersBox.addEventListener('click', function(answer) {
+    //take the user's answer and then go to the check answers function 
     const userAnswer = answer.target.textContent
     checkAnswers(userAnswer)
 })
@@ -101,10 +102,11 @@ function startQuiz(){
 function showQuestion() {
     //we have to retireve the questions array
     const currentCatQuestion = questionsArr[userCategory]
-    //check if there's any more questions left or not, if not end the quiz
+    //make sure if the category questions are there
     if(!currentCatQuestion){
         return
     }
+    //check if there's any more questions left or not, if not end the quiz
     if(questionNumber >= currentCatQuestion.length){
         return endQuiz()
     }
@@ -123,10 +125,13 @@ function showQuestion() {
 }
 
 function checkAnswers(checkUserAnswer) {
+    //go to the category the user selected
     const currentCheckAnswers = questionsArr[userCategory]
+    //take the categories answers
     const currentAnswer = currentCheckAnswers[questionNumber]
+    //takes the correct answer 
     const rightAnswer = currentAnswer.a[currentAnswer.right]
-    //check if the user selected thr right answer
+    //check if the user selected the right answer
     if(checkUserAnswer === rightAnswer) {
         score++
         results.textContent = `Your Score is : ${score} / 5`
@@ -144,7 +149,7 @@ function endQuiz() {
     answersBox.style.display = 'none'
     //show the score and play the sound
     questionText.textContent = 'Quiz is Done!'
-    results.textContent = `Your Score is ${score} / 5`
+    results.textContent = `Your Score is : ${score} / 5`
     const sound = new Audio('./audio/sound.mp3')
     sound.play()
 }

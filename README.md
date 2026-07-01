@@ -29,9 +29,9 @@ open index.html
 - **Javascript**
 
 ### Future Enhancements
-- Add more questions
-- Add easy, medium, hard modes
+- Add more questions.
+- Add easy, medium, hard modes.
 
 ### Credits
-Canva was used for the background image.
-I'd like to thank Bidoor and Zainab for their help.
+- Canva was used for the background image.
+- I'd like to thank Bidoor and Zainab for their help.
