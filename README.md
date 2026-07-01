@@ -7,7 +7,7 @@ _Easy quiz about CSS and Javascript._
 ## Getting Started
 
 ### Play the Quiz 
-[Depolyed Game](link-is-here)
+[Depolyed Game](https://ma-all.github.io/quiz-game-project/)
 
 ### How to Play
 1. Press the start button.
@@ -29,5 +29,9 @@ open index.html
 - **Javascript**
 
 ### Future Enhancements
+- Add more questions
+- Add easy, medium, hard modes
 
 ### Credits
+Canva was used for the background image.
+I'd like to thank Bidoor and Zainab for their help.
